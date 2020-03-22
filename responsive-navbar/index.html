@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="container">
+                <div class="navbar-brand">
+                    <h1>LOGO</h1>
+                    <span class="iconify bars" onclick="openDrawer()" data-inline="false"
+                        data-icon="fa-solid:bars"></span>
+                </div>
+                <div class="nav-list" id="navlist"></div>
+            </div>
+        </nav>
+        <div class="side-drawer"></div>
+        <div class="backdrop" onclick="closeDrawer()"></div>
+    </header>
+
+
+
+
+    <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
+    <script src="script.js"></script>
+
+
+
+</body>
+
+</html>

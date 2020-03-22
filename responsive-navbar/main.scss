@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+@mixin tablet {
+    @media(min-width: 768px){
+        @content;
+    }
+}
+
+
+body {
+    font-family: 'Poppins';
+    margin: 0;
+}
+.container {
+    width: 95%;
+    margin: 0 auto;
+    @include tablet {
+        width: 90%;
+    }
+}
+nav {
+    // z-index: 2;
+    width: 100%;
+    background: #27519E;
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    .container {
+        @include tablet {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            h1, .bars {color:white}
+            .bars {
+                font-size: 35px;
+                cursor: pointer;
+            @include tablet {
+                display: none;
+            }
+        }
+        }
+        .nav-list {
+            display: none;
+            @include tablet {
+                display: block;
+
+            }
+            
+        }
+    
+        
+    
+}
+.nav-ul {
+
+    list-style: none;
+    padding: 0;
+    @include tablet {
+        display: flex;
+    }
+    li {
+        margin: 40px 0;
+        @include tablet {
+            margin: 0px;
+            margin-right: 40px;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+        }
+    }
+}
+
+.side-drawer {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    right: -550px;
+    width: 60%;
+    height: 100vh;
+    background: rgb(43, 43, 43);
+    padding: 40px;
+    box-sizing: border-box;
+    transition: .4s ease;
+    
+
+    @include tablet {
+        display: none;
+    }
+}
+.side-drawer.show {
+    opacity: 1;
+    right: 0;
+}
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0,0.2);
+    height: 100vh;
+    z-index: -1;
+    opacity: 0;
+    transition: .4s ease;
+
+}
+.backdrop.show {
+    z-index: 1;
+    opacity: 1;
+
+}
